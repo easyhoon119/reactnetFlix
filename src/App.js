@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import MainScreen from './mainComponent/Main';
+import Sublogin from './mainComponent/Sublogin';
+import Login from './mainComponent/Login';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+  useHistory,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path={"/"} exact>
+            <MainScreen />
+          </Route>
+          <Route path="/sublogin">
+            <Sublogin />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

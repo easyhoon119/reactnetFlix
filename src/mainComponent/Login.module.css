@@ -1,0 +1,304 @@
+.Login {
+  height: 100%;
+  position: relative;
+}
+
+.Login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.Login img {
+  width: 100%;
+  height: 1200px;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header .inner {
+  width: 96%;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.header .main_logo {
+  background-image: url("../main_logo2.png");
+  width: 180px;
+  height: 55px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Login .login_model {
+  width: 450px;
+  background-color: rgb(0, 0, 0, 0.75);
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 55px 68px 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.login_model p {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+.email {
+  width: 314px;
+  height: 50px;
+  padding: 16px 20px 0px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  background-color: #333333;
+  font-size: 16px;
+  color: #8c8c8c;
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+}
+
+form .valid {
+  font-size: 14px;
+  color: red;
+}
+
+.password {
+  width: 314px;
+  height: 50px;
+  padding: 16px 20px 0px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 32px;
+  background-color: #333333;
+  border-style: none;
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  color: #8c8c8c;
+}
+
+.login_btn {
+  width: 314px;
+  height: 48px;
+  color: white;
+  background-color: #e50924;
+  border-style: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.toggle_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+
+.input_check {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  width: 18px;
+  height: 18px;
+  background-color: #8f8f8f !important;
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+  /* -webkit-appearance: none;
+    -moz-appearance: none; */
+  appearance: none;
+  border-radius: 2px;
+  color: #000;
+  margin-right: 5px;
+}
+
+.info:checked {
+  background-image: url("../check.png");
+  background-size: 17px;
+  background-position: center;
+}
+
+.info_label {
+  color: #b3b3b3;
+  font-size: 13px;
+}
+
+.help {
+  height: 13px;
+}
+
+.help .info_explain {
+  color: #b3b3b3;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.additional_info {
+  padding: 5px;
+}
+
+.additional_info .face_login {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.face_login .squares {
+  font-size: 23px;
+  margin-right: 10px;
+  color: #024c96;
+  border-radius: 1px;
+  position: relative;
+  padding: 0;
+}
+
+.squares::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  bottom: 2px;
+  right: 1px;
+  background: white;
+  z-index: -1;
+}
+
+.additional_info .log_to_face {
+  height: 13px;
+}
+
+.additional_info .log_to_face p {
+  font-size: 13px;
+  color: #8f8f8f;
+}
+
+.additional_info .no_member {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.additional_info .no_member .member_first {
+  color: #8f8f8f;
+}
+
+.additional_info .no_member > a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 350;
+  margin-left: 10px;
+}
+
+.additional_info .captcha {
+  font-size: 13px;
+  margin-bottom: 60px;
+}
+
+.additional_info .captcha .captcha_first {
+  color: #8f8f8f;
+}
+
+.additional_info .captcha .captcha_first a {
+  text-decoration: none;
+  color: #0257ac;
+}
+
+.Login .footer {
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.75);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0px;
+}
+
+.footer .inner {
+  width: 85%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.footer .inner .question {
+  color: #757575;
+  font-size: 16px;
+}
+
+.footer .inner .footer_menu {
+  margin-top: 30px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.footer .inner .footer_menu ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer .inner .footer_menu li {
+  width: 250px;
+  margin-right: 16px;
+  padding-bottom: 20px;
+}
+
+.footer .inner .language {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.footer .inner .footer_menu a {
+  text-decoration: none;
+  color: #757575;
+}
+
+.footer .inner .language select {
+  width: 121px;
+  height: 48px;
+  border: 0.005px solid #757575;
+  border-radius: 3px;
+  background: #000;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.lang_select {
+  color: #8c8c8c;
+}
+
+.footer .inner .copyRight {
+  font-size: 12px;
+}
+
+.footer .inner .copyRight div {
+  margin-top: 4px;
+  color: #808080;
+}

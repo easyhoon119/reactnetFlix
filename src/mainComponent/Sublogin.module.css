@@ -1,0 +1,108 @@
+header {
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 10px;
+}
+
+header .inner {
+  width: 94%;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header .main_logo {
+  background-image: url("../main_logo2.png");
+  width: 110px;
+  height: 50px;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.main {
+  width: 100%;
+  transform: translateY(60%);
+}
+
+.main .container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.main .container p {
+  font-size: 45px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.profile_icon {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+  box-sizing: border-box;
+}
+
+.profile_icon .hover {
+  box-sizing: border-box;
+}
+
+.main .container .profile_icon > div {
+  margin: 0 13px;
+}
+
+.main .container .profile_icon div p {
+  margin-top: 17px;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  color: #5e5e5e;
+}
+
+.main .container .icon1 {
+  background-image: url(https://occ-0-1009-1361.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABSJ7W5XG6vPqZ3BYA5Vw915CFrIdEIoM75asUq1rqaGoYH0vWt5sGe9V4jSoG2BPkBXSpTvbNuStKXe1-PpHf9w7tOwN.png?r=7a4);
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.main .container .icon2 {
+  background-image: url(https://occ-0-1009-1361.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABeoiFWtkpT2ezo-zFFoj5VDcvij4ZYSLnUqgWObtKbMG85CvH7yu27n7WgP0LVu3el_Vj3hw1L-eAwDVXYm_m8iJFWo1.png?r=f08);
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.main .container .icon3 {
+  background-image: url(https://occ-0-1009-1361.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABRmtNzyg7zV6EC3TQGMQqbhKrAGB42lxYLSPWRqTJ_yxIx8W7rL-Abhyr7Goh0TCHU6f2b66nJAZ3sKpsYqw0HIr61mR.png?r=125);
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.profile_admin {
+  width: 135px;
+  height: 38px;
+  padding: 7px 23px;
+  border: 1px solid #5e5e5e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5e5e5e;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+.hover2:hover {
+  border: 1.5px solid white;
+  font-weight: 650;
+  color: white;
+}
