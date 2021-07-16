@@ -42,6 +42,7 @@ header .main_logo {
   justify-content: center;
   margin: 25px 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 .profile_icon .hover {
@@ -58,6 +59,29 @@ header .main_logo {
   font-weight: 400;
   text-align: center;
   color: #5e5e5e;
+}
+
+.main .container .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  position: relative;
+}
+
+.main .container .icon i {
+  z-index: 10;
+  font-size: 25px;
+}
+
+.main .container .icon i::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .main .container .icon1 {

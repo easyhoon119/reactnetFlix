@@ -1,13 +1,18 @@
 import styled from './Login.module.css'
-import { useHistory } from 'react-router-dom'
-import { createRef, useEffect, useRef, useState } from 'react'
+import { useHistory, Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 
 function Login() {
+
+    const goSelfLogin = () => {
+        window.location.reload();
+    };
+
     return (
         <div className={styled.Login}>
             <div className={styled.header}>
                 <div className={styled.inner}>
-                    <div className={styled.main_logo}></div>
+                    <div className={styled.main_logo} onClick={goSelfLogin}></div>
                 </div>
             </div>
             <img src="https://assets.nflxext.com/ffe/siteui/vlv3/b8e09d9c-d1e7-4800-afd9-810e41ace684/6d68acdf-6efa-4f03-9513-ef482daff117/KR-ko-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg"
@@ -92,17 +97,17 @@ function Lmodel() {
             </div>
             <div className={styled.additional_info}>
                 <div className={styled.face_login}>
-                    <i className={`fab styles.fa-facebook-square ${styled.squares}`}></i>
+                    <i className={`fab fa-facebook-square ${styled.squares}`}></i>
                     <div className={styled.log_to_face}>
                         <p>Facebook으로 로그인</p>
                     </div>
                 </div>
                 <div className={styled.no_member}>
                     <span className={styled.member_first}>Netflix 회원이 아닌가요?</span>
-                    <a href="#">지금 가입하세요</a>
+                    <Link to="#">지금 가입하세요</Link>
                 </div>
                 <div className={styled.captcha}>
-                    <span className={styled.captcha_first}>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다. <a href="#">자세히 알아보기</a></span>
+                    <span className={styled.captcha_first}>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다. <Link to="#">자세히 알아보기</Link></span>
                 </div>
             </div>
         </div>
@@ -116,12 +121,12 @@ function Footer() {
                 <span className={styled.question}>질문이 있으신가요? 문의 전화: 00-308-321-0058</span>
                 <div className={styled.footer_menu}>
                     <ul>
-                        <li><a href="#">자주 묻는 질문</a></li>
-                        <li><a href="#">고객 센터</a></li>
-                        <li><a href="#">이용 약관</a></li>
-                        <li><a href="#">개인 정보</a></li>
-                        <li><a href="#">쿠키 설정</a></li>
-                        <li><a href="#">회사 정보</a></li>
+                        <li><Link to="#">자주 묻는 질문</Link></li>
+                        <li><Link to="#">고객 센터</Link></li>
+                        <li><Link to="#">이용 약관</Link></li>
+                        <li><Link to="#">개인 정보</Link></li>
+                        <li><Link to="#">쿠키 설정</Link></li>
+                        <li><Link to="#">회사 정보</Link></li>
                     </ul>
                 </div>
                 <div className={styled.language}>

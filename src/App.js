@@ -15,13 +15,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path={"/"} exact>
+          <Route path="/main">
             <MainScreen />
           </Route>
-          <Route path="/sublogin">
+          <Route path="/sublogin" exact>
             <Sublogin />
           </Route>
-          <Route path="/login">
+          <Route path="/" exact>
             <Login />
           </Route>
         </Switch>

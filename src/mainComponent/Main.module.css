@@ -6,9 +6,18 @@
   position: relative;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .inner {
   width: 94%;
   margin: 0 auto;
+  position: relative;
 }
 
 .btn {
@@ -57,6 +66,23 @@ header {
   z-index: 20000;
 }
 
+.under {
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 10px;
+  transition: all 0.8s;
+  position: fixed;
+  top: 73px;
+  left: 0;
+  z-index: 200;
+}
+
+.under .inner {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
 header .inner {
   height: 60px;
   display: flex;
@@ -83,6 +109,11 @@ header .menu_list {
 
 header .menu_bar li {
   padding: 10px;
+  cursor: pointer;
+}
+
+header .menu_bar li.clicked {
+  color: white;
 }
 
 header .menu_icon {
@@ -133,7 +164,6 @@ header .user_face {
 
 .control_video p {
   width: 456px;
-  height: 60px;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -208,13 +238,17 @@ header .menu_icon > .fa-caret-up {
   transition: all 1s;
 }
 
+header .menu_icon .user_face {
+  position: relative;
+}
+
 header .menu_icon .user_face > i {
   font-size: 22px;
   width: 70px;
   text-align: center;
   position: absolute;
   top: 90%;
-  right: 0.5%;
+  right: -40px;
   display: none;
 }
 
@@ -224,11 +258,12 @@ header .menu_icon .admin_profile {
   padding: 20px 10px 0;
   font-size: 14px;
   font-weight: 320;
-  top: 128%;
-  right: 5%;
+  top: 135%;
+  right: 0;
   width: 160px;
   background-color: rgb(19, 19, 19);
   border: 0.8px solid rgb(36, 36, 36);
+  z-index: 100000000000000000000;
 }
 
 header .menu_icon .admin_profile .hover {
@@ -296,17 +331,26 @@ header .menu_icon .admin_profile ul li a {
 }
 
 .user_play_data {
-  z-index: 1000;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
   position: absolute;
-  padding-bottom: 75px;
-  top: 520px;
+  padding-bottom: 120px;
+  top: 530px;
   left: 0px;
-  padding-top: 50px;
+  padding-top: 80px;
   overflow: hidden;
+}
+
+.hotcontent {
+  top: 60px;
+  left: 0px;
+}
+
+.mycontent {
+  top: 180px;
 }
 
 .user_play_data p {
@@ -321,7 +365,7 @@ header .menu_icon .admin_profile ul li a {
   border-radius: 5px;
   margin-right: 5px;
   display: block;
-  position: relative;
+  /* position: relative; */
 }
 
 .user_play_data i {
@@ -373,6 +417,7 @@ header .menu_icon .admin_profile ul li a {
 .komovie_container,
 .ranking_container {
   display: flex;
+  position: relative;
 }
 
 .show_ranking {
@@ -410,26 +455,33 @@ header .menu_icon .admin_profile ul li a {
 
 .user_play_data .hover_container .movie_detail {
   display: none;
-  background-color: #2e2e2e;
+  background-color: rgba(21, 21, 21, 0.98);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   transform: translateY(-10px);
   position: absolute;
   top: 135px;
   width: 98%;
+  z-index: 2000;
   margin-right: 5px;
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: inset 0.1px -0.5px 2px 0.2px lightgray;
 }
 
 .user_movie .movie_detail .detail_btn {
   width: 100%;
   height: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.only_movie .movie_detail .detail_btn {
+  display: flex;
+  align-items: center;
 }
 
 .user_play_data .only_container .movie_detail {
-  background-color: #2e2e2e;
+  background-color: #121010;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   transform: translateY(-10px);
@@ -440,25 +492,44 @@ header .menu_icon .admin_profile ul li a {
   z-index: 100;
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: inset 0.1px -0.5px 2px 0.2px lightgray;
 }
 
 .user_play_data .movie_detail i {
-  font-size: 20px;
+  font-size: 23px;
   transition: all 1s 1s;
   z-index: 300;
   color: #a0a0a0;
   margin-right: 5px;
 }
 
+.user_play_data .movie_detail i:nth-child(3) {
+  border: 2px solid #a0a0a0;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.user_play_data .movie_detail i:nth-child(4) {
+  border: 2px solid #a0a0a0;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.user_play_data .movie_detail i:nth-child(5) {
+  font-size: 27.5px;
+}
+
 .user_play_data .movie_detail i:last-child {
-  margin-left: 50px;
+  margin-left: 20px;
+  font-size: 26px;
+  cursor: pointer;
 }
 
 .user_play_data .movie_detail p {
   margin-top: 10px;
-  font-size: 15px;
-  padding-top: 10px;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 .user_play_data .movie_detail .detail_time {
@@ -499,6 +570,14 @@ header .menu_icon .admin_profile ul li a {
   bottom: 0;
   right: 0;
   /* transform: rotateX(-50%); */
+}
+
+.hotFoot {
+  top: 1700px;
+}
+
+.myFoot {
+  top: 500px;
 }
 
 .footer .inner {
@@ -559,4 +638,179 @@ header .menu_icon .admin_profile ul li a {
 
 .footer .copyRight div {
   margin-top: 8px;
+}
+
+.modalSize {
+  max-width: 900px;
+  max-height: none;
+  width: 850px;
+  overflow: hidden;
+}
+
+.modalImg {
+  width: 100%;
+  height: 400px;
+}
+
+.modalTitle {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  margin-left: 50px;
+}
+
+.modalSize .exitBtn {
+  color: #141414;
+  position: absolute;
+  font-size: 40px;
+  top: 45px;
+  right: 45px;
+}
+
+.modalControl {
+  display: flex;
+}
+
+.modalBtnPlay {
+  margin-right: 25px;
+}
+
+.modalControl > i {
+  margin-right: 18px;
+  font-size: 35px;
+  color: #ededed;
+}
+
+.tiImage {
+  width: 340px;
+  height: 148px;
+}
+
+.modalExplain {
+  font-size: 25px;
+  color: white;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalExplain .explain1 {
+  width: 400px;
+}
+
+.explain1 p {
+  margin-bottom: 30px;
+}
+
+.explain1 p:last-child {
+  font-size: 19px;
+}
+
+.modalExplain .explain2 {
+  font-size: 20px;
+  width: 170px;
+}
+
+.explain2 p {
+  margin-bottom: 15px;
+}
+
+.modalSize .dialogList {
+  background-color: #141414;
+  width: 91%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.dialogList hr {
+  background-color: #5e5e5e;
+  height: 1px;
+  box-shadow: none;
+  border: none;
+}
+
+.dialogList .listUpper {
+  color: #ededed;
+}
+
+.listUpper .secondList {
+  text-align: right;
+}
+
+.listUpper span {
+  font-size: 27px;
+}
+
+.countImg {
+  width: 200px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.countText span {
+  font-size: 25px;
+  color: white;
+}
+
+.countTime span {
+  font-size: 25px;
+  color: white;
+  text-align: right;
+}
+
+.countIndex {
+  width: 2px;
+  flex: none;
+}
+
+.countIndex {
+  display: block;
+  font-size: 25px;
+  color: white;
+  margin-right: 30px;
+}
+
+.dialogFooter {
+  width: 91%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.dialogFooter p {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.dialogFooter p strong {
+  margin-right: 10px;
+  font-weight: 800;
+}
+
+.explain3 p {
+  font-size: 20px;
+}
+
+.inner .underText {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 5px;
+}
+
+.inner .janre {
+  margin: 5px 30px;
+}
+
+.inner .janre select {
+  width: 100px;
+  border: 0.5px solid white;
+  color: white;
+  background: #000;
+  padding: 12px;
+  font-size: 13px;
+  padding: 3px 7px;
+}
+
+.janre_select {
+  color: white;
 }
