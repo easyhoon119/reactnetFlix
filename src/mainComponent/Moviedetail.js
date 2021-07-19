@@ -52,7 +52,7 @@ function Moviedetail(props) {
 
     const addLike = (e) => {
         dispatch(likeAction({
-            userLike: [{
+            userLike: [...list.userLike, {
                 title: props.alt,
                 image: props.image,
                 titleImage: props.titleImg,
@@ -67,7 +67,7 @@ function Moviedetail(props) {
         <div className={styles.movie_detail} ref={down} id="detail">
             <div className={styles.detail_btn}>
                 <i className="far fa-play-circle" id="play"></i>
-                <i className="fas fa-plus-circle" onClick={addLike} id="plus"></i>
+                <i className="fas fa-plus-circle" onClick={addLike} id="plus" style={{ cursor: 'pointer' }}></i>
                 <i className="far fa-thumbs-up" id="up"></i>
                 <i className="far fa-thumbs-down" id="down"></i>
                 <Dialog open={open} onClose={closeModal} scroll='body' style={{ zIndex: 99999999 }} maxWidth={false} onMouseLeave={noClose} className={styles.dialog}>

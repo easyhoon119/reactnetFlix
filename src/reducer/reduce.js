@@ -17,7 +17,6 @@ const likeReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LIKE': {
             return {
-                ...state,
                 userLike: action.data.userLike
             }
         }

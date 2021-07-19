@@ -62,7 +62,7 @@ function Headers() {
         <div className={styles.headers}>
             <header style={{ Zindex: 2000 }} ref={Headerscroll}>
                 <div className={styles.inner}>
-                    <div className={styles.logo} onClick={goSelfLogin}></div>
+                    <div className={styles.logo} style={{ cursor: 'pointer' }} onClick={goSelfLogin}></div>
                     <div className={styles.menu_bar}>
                         <ul className={styles.menu_list}>
                             <NavButtonStyled page={url} id="main"><li onClick={menuClick} id="main">홈</li></NavButtonStyled>
@@ -74,7 +74,7 @@ function Headers() {
                     </div>
                     <div className={styles.menu_icon}>
                         <i className={`fas fa-caret-up ${styles.playprofile}`}></i>
-                        <div ref={Adminprofile} className={styles.user_face} onMouseOver={showProfile} onMouseOut={endProfile}>
+                        <div ref={Adminprofile} className={styles.user_face} style={{ cursor: 'pointer' }} onMouseOver={showProfile} onMouseOut={endProfile}>
                             <i className="fas fa-caret-up"></i>
                             <Hoverprofile />
                         </div>
