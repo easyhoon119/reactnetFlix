@@ -71,7 +71,7 @@ function Lmodel() {
 
     const statusChangeCallback = (response) => {
         if (response.status === 'connected') {
-            history.push('/main');
+            console.log('hihi');
         }
     };
 
