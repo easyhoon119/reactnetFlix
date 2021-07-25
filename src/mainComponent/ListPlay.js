@@ -120,7 +120,7 @@ function ListPlay(props) {
         boolValue = true;
     }
 
-    const list_default = props.list.length === 0 ? <i className={`fas fa-spinner ${styles.spinner}`}></i> : props.list.map((li, index) => (<div key={index} ref={userMovie} id="parent" className={`${props.name} slide`} onMouseLeave={notDetail}> <img src={li.image} alt={li.title} id="image" className={styles.wow} state='false' ref={wowImage} onMouseEnter={showDetail} /><Moviedetail states={state} parent={wowImage} func={changeBool} titleImg={li.titleImage} image={li.image} modalImg={li.modalImage} alt={li.title} /></div >));
+    const list_default = props.list.length === 0 ? <i className={`fas fa-spinner ${styles.spinner}`}></i> : props.list.map((li, index) => (<div style={{ marginRight: '5px' }} key={index} ref={userMovie} id="parent" className={`${props.name} slide`} onMouseLeave={notDetail}> <img src={li.image} alt={li.title} id="image" className={styles.wow} state='false' ref={wowImage} onMouseEnter={showDetail} /><Moviedetail states={state} parent={wowImage} func={changeBool} titleImg={li.titleImage} image={li.image} modalImg={li.modalImage} alt={li.title} /></div >));
 
     return (
         <div className={styles.inner}>

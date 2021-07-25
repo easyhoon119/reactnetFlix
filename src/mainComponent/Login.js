@@ -2,6 +2,8 @@ import styled from './Login.module.css'
 import { useHistory, Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 
+const { FB } = window;
+
 function Login() {
 
     const goSelfLogin = () => {
@@ -62,6 +64,18 @@ function Lmodel() {
     }
 
     useEffect(() => {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }, []);
+
+    const statusChangeCallback = (response) => {
+        if (response.status === 'connected') {
+            history.push('/main');
+        }
+    };
+
+    useEffect(() => {
         if (passwordVal.length >= 4) {
             setvalideState(false);
             setFormState(true);
@@ -76,6 +90,12 @@ function Lmodel() {
         setpasswordVal(passInput.current.value);
         console.log(passwordVal);
     }
+
+    const goLogin = () => {
+        FB.login(function (response) {
+            console.log(response.status);
+        }, { scope: 'public_profile,email' });
+    };
 
     return (
         <div className={styled.login_model}>
@@ -98,7 +118,7 @@ function Lmodel() {
             <div className={styled.additional_info}>
                 <div className={styled.face_login}>
                     <i className={`fab fa-facebook-square ${styled.squares}`}></i>
-                    <div className={styled.log_to_face}>
+                    <div className={styled.log_to_face} onClick={goLogin}>
                         <p>Facebook으로 로그인</p>
                     </div>
                 </div>
