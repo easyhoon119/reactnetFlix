@@ -93,7 +93,9 @@ function Lmodel() {
 
     const goLogin = () => {
         FB.login(function (response) {
-            console.log(response.status);
+            if (response.status === 'connected') {
+                history.push('/sublogin');
+            }
         }, { scope: 'public_profile,email' });
     };
 
