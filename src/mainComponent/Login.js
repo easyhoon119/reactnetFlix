@@ -63,17 +63,17 @@ function Lmodel() {
 
     }
 
-    useEffect(() => {
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-    }, []);
+    // useEffect(() => {
+    //     FB.getLoginStatus(function (response) {
+    //         statusChangeCallback(response);
+    //     });
+    // }, []);
 
-    const statusChangeCallback = (response) => {
-        if (response.status === 'connected') {
-            console.log(response.userID, response.accessToken);
-        }
-    };
+    // const statusChangeCallback = (response) => {
+    //     if (response.status === 'connected') {
+    //         console.log(response.userID, response.accessToken);
+    //     }
+    // };
 
     useEffect(() => {
         if (passwordVal.length >= 4) {
@@ -94,7 +94,8 @@ function Lmodel() {
     const goLogin = () => {
         FB.login(function (response) {
             if (response.status === 'connected') {
-                console.log(response.userID, response.accessToken);
+                console.log(response.authResponse.userID, response.authResponse.accessToken);
+                history.push('/sublogin');
             }
         }, { scope: 'public_profile,email' });
     };
