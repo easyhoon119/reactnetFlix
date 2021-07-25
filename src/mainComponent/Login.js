@@ -71,7 +71,6 @@ function Lmodel() {
 
     const statusChangeCallback = (response) => {
         if (response.status === 'connected') {
-            history.push("/main");
             console.log(response.userID, response.accessToken);
         }
     };
@@ -95,7 +94,7 @@ function Lmodel() {
     const goLogin = () => {
         FB.login(function (response) {
             if (response.status === 'connected') {
-                history.push('/main');
+                console.log(response.userID, response.accessToken);
             }
         }, { scope: 'public_profile,email' });
     };
