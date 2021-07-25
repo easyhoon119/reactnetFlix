@@ -5,7 +5,7 @@ import Login from './mainComponent/Login';
 import {
   BrowserRouter,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 function App() {
