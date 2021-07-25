@@ -95,7 +95,6 @@ function Lmodel() {
         FB.login(function (response) {
             if (response.status === 'connected') {
                 console.log(response.authResponse.userID, response.authResponse.accessToken);
-                history.push('/sublogin');
             }
         }, { scope: 'public_profile,email' });
     };
