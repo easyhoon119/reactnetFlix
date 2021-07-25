@@ -71,7 +71,7 @@ function Lmodel() {
 
     const statusChangeCallback = (response) => {
         if (response.status === 'connected') {
-            console.log('hihi');
+            history.push("/sublogin");
         }
     };
 
