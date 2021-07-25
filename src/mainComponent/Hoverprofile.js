@@ -1,6 +1,6 @@
 import styles from './Main.module.css';
 import { useHistory, Link } from 'react-router-dom';
-import { React, useEffect, useRef, useState } from 'react';
+import { React } from 'react';
 
 function Hoverprofile() {
     const history = useHistory();

@@ -6,8 +6,6 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Redirect,
-  useHistory,
 } from "react-router-dom";
 
 function App() {

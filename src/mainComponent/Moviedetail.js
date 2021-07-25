@@ -1,15 +1,10 @@
 import styles from './Main.module.css';
-import { useHistory, Link } from 'react-router-dom';
-import { React, useEffect, useRef, useState } from 'react';
+import { React, useRef, useState } from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
-import zIndex from '@material-ui/core/styles/zIndex';
 import { useDispatch, useSelector } from 'react-redux';
 import { likeAction } from '../reducer/reduce';
 
@@ -61,7 +56,7 @@ function Moviedetail(props) {
         }));
     }
 
-    const realList = listCount.map((item, index) => (<div key={index}><ListItem button selected={selectedIndex === index} onClick={(event) => handleListItemClick(event, index)} divider={true} className={styles.realList} ><span className={styles.countIndex}>{index + 1}</span><img src={props.image} className={styles.countImg} style={{ borderRadius: '5px' }} /><ListItemText primary={item[0]} className={styles.countText}></ListItemText><ListItemText primary={item[1]} className={styles.countTime}></ListItemText></ListItem><hr /></div>));
+    const realList = listCount.map((item, index) => (<div key={index}><ListItem button selected={selectedIndex === index} onClick={(event) => handleListItemClick(event, index)} divider={true} className={styles.realList} ><span className={styles.countIndex}>{index + 1}</span><img src={props.image} className={styles.countImg} style={{ borderRadius: '5px' }} alt="imageCount" /><ListItemText primary={item[0]} className={styles.countText}></ListItemText><ListItemText primary={item[1]} className={styles.countTime}></ListItemText></ListItem><hr /></div>));
 
     return (
         <div className={styles.movie_detail} ref={down} id="detail">
@@ -73,10 +68,10 @@ function Moviedetail(props) {
                 <Dialog open={open} onClose={closeModal} scroll='body' style={{ zIndex: 99999999 }} maxWidth={false} onMouseLeave={noClose} className={styles.dialog}>
                     <div className={styles.modalSize}>
                         <DialogContent style={{ backgroundColor: '#141414', padding: 0, maxWidth: 'none', maxHeight: 'none', overflow: 'visible' }} >
-                            <img src={props.modalImg} className={styles.modalImg} />
+                            <img src={props.modalImg} className={styles.modalImg} alt="modalImage" />
                             <i className={`fas fa-times-circle ${styles.exitBtn}`} onClick={closeModal}></i>
                             <div className={styles.modalTitle}>
-                                <img src={props.titleImg} className={styles.tiImage} />
+                                <img src={props.titleImg} className={styles.tiImage} alt="titleImage" />
                                 <div className={styles.modalControl}>
                                     <div className={`${styles.btn} ${styles.modalBtnPlay}`}>
                                         <i className="fas fa-play"></i>재생

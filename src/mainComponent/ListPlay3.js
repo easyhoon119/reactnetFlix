@@ -1,9 +1,7 @@
 import styles from './Main.module.css';
 import Moviedetail from './Moviedetail.js';
-import { useHistory, Link } from 'react-router-dom';
-import { React, useEffect, useRef, useState } from 'react';
+import { React, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { likeReducer } from '../reducer/reduce.js'
 
 function ListPlay2(props) {
 
@@ -17,10 +15,6 @@ function ListPlay2(props) {
     const userMovie = useRef();
     const SlideGo = useRef();
     const list = useSelector(state => state.likeReducer);
-
-    useEffect(() => {
-        console.log(list.userLike);
-    }, []);
 
     const shownext = () => {
         if (Hovercontainer) {

@@ -6,14 +6,10 @@ import ListPlay1 from './ListPlay1.js';
 import ListPlay2 from './ListPlay3.js';
 import Footer from './Footer.js';
 import Underheader from './Underheader.js';
-import { useHistory, Link, useParams } from 'react-router-dom';
-import { React, useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { React, useEffect, useState } from 'react';
 import {
-    BrowserRouter,
-    Switch,
-    Route,
-    Redirect,
-    Router
+    Route
 } from "react-router-dom";
 
 function MainScreen() {
