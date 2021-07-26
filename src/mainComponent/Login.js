@@ -71,7 +71,7 @@ function Lmodel() {
 
     const statusChangeCallback = (response) => {
         if (response.status === 'connected') {
-            console.log(response.userID, response.accessToken);
+            console.log(response.authResponse.userID, response.authResponse.accessToken);
             history.push('/login');
         }
     };
