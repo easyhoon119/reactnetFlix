@@ -63,17 +63,18 @@ function Lmodel() {
 
     }
 
-    // useEffect(() => {
-    //     FB.getLoginStatus(function (response) {
-    //         statusChangeCallback(response);
-    //     });
-    // }, []);
+    useEffect(() => {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }, []);
 
-    // const statusChangeCallback = (response) => {
-    //     if (response.status === 'connected') {
-    //         console.log(response.userID, response.accessToken);
-    //     }
-    // };
+    const statusChangeCallback = (response) => {
+        if (response.status === 'connected') {
+            console.log(response.userID, response.accessToken);
+            history.push('/login');
+        }
+    };
 
     useEffect(() => {
         if (passwordVal.length >= 4) {
