@@ -3,7 +3,7 @@ import MainScreen from './mainComponent/Main';
 import Sublogin from './mainComponent/Sublogin';
 import Login from './mainComponent/Login';
 import {
-  BrowserRouter,
+  HashRouter,
   Switch,
   Route
 } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route path="/main">
             <MainScreen />
@@ -23,7 +23,7 @@ function App() {
             <Login />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
