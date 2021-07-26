@@ -16,7 +16,7 @@ function App() {
           <Route path="/main">
             <MainScreen />
           </Route>
-          <Route path="/sublogin" exact>
+          <Route path="/login" exact>
             <Sublogin />
           </Route>
           <Route path="/" exact>

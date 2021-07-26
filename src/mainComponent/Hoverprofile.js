@@ -20,7 +20,7 @@ function Hoverprofile() {
                     <div className={`${styles.icon3} ${styles.icon}`}></div>
                     <p>지훈</p>
                 </div>
-                <p className={styles.go_sublogin} onClick={() => { let token = localStorage.getItem('token'); localStorage.setItem('token', token.split('/')[0]); history.push("/sublogin") }}>프로필 관리</p>
+                <p className={styles.go_sublogin} onClick={() => { let token = localStorage.getItem('token'); localStorage.setItem('token', token.split('/')[0]); history.push("/login") }}>프로필 관리</p>
             </div>
             <div className={styles.center}>
                 <ul>

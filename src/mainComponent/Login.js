@@ -48,7 +48,7 @@ function Lmodel() {
             if (e_val === 'easyhoon119@naver.com' && p_val == '1234') {
                 const token = '1q2w3e4r!';
                 localStorage.setItem('token', token);
-                history.push("/sublogin");
+                history.push("/login");
             }
             else {
                 alert('사용자가 존재하지 않습니다.');
@@ -95,7 +95,7 @@ function Lmodel() {
         FB.login(function (response) {
             if (response.status === 'connected') {
                 console.log(response.authResponse.userID, response.authResponse.accessToken);
-                history.push('/sublogin');
+                history.push('/login');
             }
         }, { scope: 'public_profile,email' });
     };
