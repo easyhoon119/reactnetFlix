@@ -12,6 +12,7 @@
 - styled-component
 - life-cycle
 - social login(OAuth)
+- Responsive
 
 ## 화면 구성
 
