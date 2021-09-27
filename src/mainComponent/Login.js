@@ -1,6 +1,8 @@
 import styled from './Login.module.css'
 import { useHistory, Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import stylet from 'styled-components';
 
 const { FB } = window;
 
@@ -63,6 +65,15 @@ function Lmodel() {
 
     }
 
+    const responseFacebook = (response) => {
+        const { name, email } = response; //페이스북 응답객체에서 id와 email을 할당한 후 
+        console.log(name, email);
+        console.log(response);
+        if (name) {
+            history.push('/login');
+        }
+    };
+
     // useEffect(() => {
     //     FB.getLoginStatus(function (response) {
     //         statusChangeCallback(response);
@@ -92,14 +103,14 @@ function Lmodel() {
         console.log(passwordVal);
     }
 
-    const goLogin = () => {
-        FB.login(function (response) {
-            if (response.status === 'connected') {
-                console.log(response.authResponse.userID, response.authResponse.accessToken);
-                history.push('/login');
-            }
-        }, { scope: 'public_profile,email' });
-    };
+    // const goLogin = () => {
+    //     FB.login(function (response) {
+    //         if (response.status === 'connected') {
+    //             console.log(response.authResponse.userID, response.authResponse.accessToken);
+    //             history.push('/login');
+    //         }
+    //     }, { scope: 'public_profile,email' });
+    // };
 
     return (
         <div className={styled.login_model}>
@@ -120,12 +131,27 @@ function Lmodel() {
                 </div>
             </div>
             <div className={styled.additional_info}>
-                <div className={styled.face_login}>
+                {/* <div className={styled.face_login}>
                     <i className={`fab fa-facebook-square ${styled.squares}`}></i>
                     <div className={styled.log_to_face} onClick={goLogin}>
                         <p>Facebook으로 로그인</p>
                     </div>
-                </div>
+                </div> */}
+                <FacebookLogin
+                    appId={'2892174151055580'} // 페이스북 앱 등록 후, 생성되는 앱 아이디를 넣어준다.
+                    autoLoad={false} // 자동 실행 여부를 정해줄 수 있다.
+                    fields="name,email,picture" // fields 설정
+                    callback={responseFacebook}
+
+                    render={(renderProps) => (
+                        <FaceBookLoginButton>
+                            <ButtonInnerDiv onClick={renderProps.onClick}>
+                                <i className={`fab fa-facebook-square ${styled.squares}`}></i>
+                                <ButtoninnerText>facebook으로 로그인</ButtoninnerText>
+                            </ButtonInnerDiv>
+                        </FaceBookLoginButton>
+                    )}
+                ></FacebookLogin>
                 <div className={styled.no_member}>
                     <span className={styled.member_first}>Netflix 회원이 아닌가요?</span>
                     <Link to="#">지금 가입하세요</Link>
@@ -137,6 +163,23 @@ function Lmodel() {
         </div>
     );
 }
+
+const FaceBookLoginButton = stylet.div`
+    background-Color : #050505;
+    margin-bottom : 15px;
+    cursor : pointer;
+`;
+
+const ButtonInnerDiv = stylet.div`
+    color : grey;
+    display : flex;
+    align-items : center;
+`;
+
+const ButtoninnerText = stylet.h3`
+    font-Size : 15px;
+    margin-left : 10px;
+`;
 
 function Footer() {
     return (
@@ -172,5 +215,6 @@ function Footer() {
         </div>
     );
 }
+
 
 export default Login;

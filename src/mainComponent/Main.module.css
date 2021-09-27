@@ -364,7 +364,7 @@ header .menu_icon .admin_profile ul li a {
   border-radius: 5px;
   /* margin-right: 5px; */
   display: block;
-  /* position: relative; */
+  position: relative;
 }
 
 .user_play_data i {
@@ -403,7 +403,7 @@ header .menu_icon .admin_profile ul li a {
   width: 96%;
   margin: 4vw 0;
   margin-top: 0;
-  position: relative;
+  /* position: relative; */
 }
 
 .user_play_data .inner .user_container,

@@ -122,11 +122,11 @@ header .main_logo {
   color: #5e5e5e;
   margin: 0 auto;
   margin-top: 50px;
-  box-sizing: border-box;
 }
 
 .hover2:hover {
   border: 1.5px solid white;
   font-weight: 650;
   color: white;
+  box-sizing: border-box;
 }

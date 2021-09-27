@@ -115,11 +115,11 @@ function ListPlay2(props) {
         boolValue = true;
     }
 
-    const list_default = list.userLike.length === 0 ? <p>찜한 콘텐츠가 없습니다.</p> : list.userLike.map((li, index) => (<div key={index} ref={userMovie} id="parent" className={`${props.name} slide`} onMouseLeave={notDetail}> <img src={li.image} alt={li.title} id="image" className={styles.wow} state='false' ref={wowImage} onMouseEnter={showDetail} /><Moviedetail states={state} parent={wowImage} func={changeBool} titleImg={li.titleImage} image={li.image} modalImg={li.modalImage} alt={li.title} /></div >));
+    const list_default = list.userLike.length === 0 ? <p>찜한 콘텐츠가 없습니다.</p> : list.userLike.map((li, index) => (<div key={index} ref={userMovie} style={{ paddingLeft: '0.5vw' }} id="parent" className={`${props.name} slide`} onMouseLeave={notDetail}> <img src={li.image} alt={li.title} id="image" className={styles.wow} state='false' ref={wowImage} onMouseEnter={showDetail} /><Moviedetail states={state} parent={wowImage} func={changeBool} titleImg={li.titleImage} image={li.image} modalImg={li.modalImage} alt={li.title} /></div >));
 
     return (
         <div className={styles.inner}>
-            <div ref={Hovercontainer} className={`${props.cname} ${styles.hover_container}`} onMouseEnter={shownext}>
+            <div ref={Hovercontainer} className={`${props.cname} ${styles.hover_container}`} style={{ marginTop: '2vw' }} onMouseEnter={shownext}>
                 {list_default}
             </div>
             <i className={`fas fa-chevron-right ${styles.next}`} count={count} currentindex={cindex} slidecount={slideCount} ref={SlideGo} onClick={Cloning}></i>

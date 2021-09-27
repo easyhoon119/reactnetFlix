@@ -1,71 +1,32 @@
-# Getting Started with Create React App
+# Netflix clone with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개발기간
 
-## Available Scripts
+- 2021.07 ~ 2021.08
 
-In the project directory, you can run:
+## 사용 기술 스택
 
-### `npm start`
+- React
+- Redux
+- JavaScript
+- styled-component
+- life-cycle
+- social login(OAuth)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 화면 구성
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 로그인 화면
+- 서브 로그인 화면(프로필 선택 창)
+- 메인 홈 화면
+- TV 프로그램 화면
+- 영화 화면
+- New! 요즘 대세 화면
+- 내가 찜한 콘텐츠 화면
 
-### `npm test`
+## 개발하면서 여려웟던 부분
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# reactnetFlix
+- 라이브러리 없이 콘텐츠 리스트 슬라이딩 구현(transform 이용)
+- 콘텐츠 이미지 hover시 요약정보를 보여주는 창 구현(mouseEnter, mouseLeave 이용)
+- 이미지나 동영상의 위치가 src냐 public이냐에 따라 경로와 사용법이 달라진다
+- 찜한 콘텐츠 화면 구현(Redux 이용 - state 불변성 규칙)
+- 모달창 구현으로 Metarial UI 라이브러리 사용

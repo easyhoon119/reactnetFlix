@@ -174,7 +174,7 @@ form .valid {
   margin-bottom: 16px;
 }
 
-.face_login .squares {
+.squares {
   font-size: 23px;
   margin-right: 10px;
   color: #024c96;
@@ -186,10 +186,10 @@ form .valid {
 .squares::after {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 1px;
-  bottom: 2px;
-  right: 1px;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  right: 0px;
   background: white;
   z-index: -1;
 }
